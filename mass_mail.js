@@ -58,8 +58,8 @@ function emailSend() {
     window.valMail.forEach(({ email, row }) => {
         Email.send({
             Host: "smtp.elasticemail.com",
-            Username: "gunamonibharath@gmail.com",
-            Password: "bharath123", // Replace with a secure way to store passwords
+            Username: "",
+            Password: "", // Replace with a secure way to store passwords
             To: email,
             From: "gunamonibharath@gmail.com",
             Subject: subject,
