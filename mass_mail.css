@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: rgb(232, 177, 147);
+}
+
+/*Navbar*/
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0,0,0);
+    position: sticky;
+    top: 0;
+}
+.navbar ul{
+    display: flex;
+    list-style: none;
+    margin: 20px 0px;
+}
+.navbar ul li{
+    font-family: century;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 8px 25px;
+    transition: all .5s ease;
+}
+.navbar ul li a:hover{
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 10px white;
+}
+/*---------Home-------------*/
+#home{
+    display: flex;
+    flex-direction: column;
+    height: 650px;
+    justify-content: center;
+    align-items: left;
+    color: black;
+
+}
+#home::before{
+    content: "";
+    position: absolute;
+    top: 600;
+    right:0;
+    background: url(https://www.access.net.np/images/cloud-bulk-e-mailing.png) no-repeat center center/cover;
+    height : 470px;
+    width: 50%;
+    z-index: -5;
+    opacity: .8;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    border: 1px  hotpink;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    left: 10%;  
+}
+.headings{
+    font-family: century;
+    font-size: rem;
+    text-align: left;
+    margin: 40px 0px;
+}
+
+#mail{
+    border-radius: 24px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #084cdf;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: #0d45a5;
+}
