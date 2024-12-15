@@ -1,7 +1,23 @@
+require('dotenv').config();
 
+// Access environment variables
+const smtpHost = process.env.SMTP_HOST;
+const smtpUser = process.env.SMTP_USER;
+const smtpPassword = process.env.SMTP_PASSWORD;
 let upload = document.getElementById('upload');
 upload.addEventListener('change', () => {
     let frm = new FileReader();
+    
+    if (!frm) {
+        alert("Please upload a file.");
+        return;
+    }
+    if (!frm.name.endsWith('.csv')) {
+        alert("Invalid file format. Please upload a CSV file.");
+        upload.value = ""; // Reset the file input
+        return;
+    }
+
     frm.readAsText(upload.files[0]);
 
     frm.onload = function () {
@@ -57,9 +73,9 @@ function emailSend() {
 
     window.valMail.forEach(({ email, row }) => {
         Email.send({
-            Host: "smtp.elasticemail.com",
-            Username: "",
-            Password: "", // Replace with a secure way to store passwords
+            Host: smtpHost,
+            Username: smtpUser,
+            Password: smtpPassword, 
             To: email,
             From: "gunamonibharath@gmail.com",
             Subject: subject,
